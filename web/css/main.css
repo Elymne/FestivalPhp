@@ -1,0 +1,139 @@
+/* CSS ENCADRE TITRE */
+
+.jumbotron-blue {
+  padding-top: 30px; 
+  padding-bottom: 30px;
+  margin-left: -20px;
+  margin-right: -20px;
+  margin-bottom: 0px;
+  background-image: url("../images/Core/image_jumbotron.jpg");
+  background-size: cover;
+}
+.container .jumbotron-blue,
+.container-fluid .jumbotron-blue {
+  padding-right: 15px;
+  padding-left: 15px;
+  border-radius: 1px;
+}
+
+/* CSS BARRE DE MENU */
+
+.navbar-default {
+  background-color: #FF8000;
+  border-color: #B45F04;
+  border-radius: 1px;
+  margin-left: -20px;
+  margin-right: -20px;
+  margin-bottom: 50px;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #555;
+  background-color: #B45F04;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  color: #ffcc00;
+  background-color: #B45F04;
+}
+.navbar-default .navbar-nav>li>a {
+    color: #FBFBEF;
+}
+.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a:hover, 
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #FBFBEF;
+    background-color: #B45F04;
+}
+.navbar-default .navbar-nav .open .dropdown-menu>.active>a, 
+.navbar-default .navbar-nav .open .dropdown-menu>.active>a:focus, 
+.navbar-default .navbar-nav .open .dropdown-menu>.active>a:hover {
+    color: #ffcc00;
+    background-color: #B45F04;
+}
+
+
+/* NAVBAR ADMINISTRATEUR */
+
+.navbar-inverse {
+    background-color: #222;
+    border-color: #080808;
+    border-radius: 1px;
+    margin-left: -20px;
+    margin-right: -20px;
+    margin-bottom: 50px;
+    margin-top: 0px;
+    height: 51px;
+}
+
+
+/* Bouton spécial orange */
+
+
+.btn-festival {
+    color: #FBFBEF;
+    background-color: #FF8000;
+    border-color: #B45F04;
+}
+
+/* CSS CALENDRIER */
+
+.well-calendar {
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  margin-left: 100px;
+  margin-right: 100px;
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+}
+
+
+/* CSS TABLE */
+.thead-dark{
+    border-color: #1C1C1C;
+    background: #2E2E2E;
+    color: white;
+}
+
+.tr-white{
+    border-color: #1C1C1C;
+    background: #FFFFFF;
+    color: black;
+}
+
+.tr-dark{
+    border-color: #1C1C1C;
+    background: #2E2E2E;
+    color: white;
+}
+
+/* CSS WELL-MENU */
+.well-menu {
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+}
+
+h2.title{  
+    margin-bottom: 50px;
+    color: #2E2E2E;
+    font-family: Verdana;
+}
+
+p.index{
+    color: #2E2E2E;
+    font-family: Verdana;
+    margin-bottom: 30px;
+}
+

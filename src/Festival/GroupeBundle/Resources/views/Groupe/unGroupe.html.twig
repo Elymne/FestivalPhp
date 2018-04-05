@@ -1,0 +1,60 @@
+{% extends "@FestivalCore/Layout.html.twig" %}
+
+{% block body %}
+    
+    {% for groupe in unGroupe %}
+    
+    <div class="well">
+        <h2 class="title"> Information du groupe : {{ groupe.nom }} </h2>
+        
+        <table class="table">
+
+                <tr class="tr-white">
+                    <th>Responsable</th>
+                    <th>{{ groupe.responsable }}</th>
+                </tr>
+                <tr class="tr-white">
+                    <th>Adresse</th>
+                    <th>{{ groupe.adresse }}</th>
+                </tr>
+                <tr class="tr-white">
+                    <th>Nombre de personne dans le groupe</th>
+                    <th>{{ groupe.nbPersonnes }}</th>
+                </tr>
+                <tr class="tr-white">
+                    <th>Pays d'origine</th>
+                    <th>{{ groupe.pays }}</th>
+                </tr>
+                <tr class="tr-white">
+                    <th>Hebergement</th>
+                    {% if groupe.hebergement %}
+                        <th class="glyphicon glyphicon-ok"></th>
+                    {% else %}
+                        <th class="glyphicon glyphicon-remove"></th>
+                    {% endif %}
+                </tr>
+                
+ 
+        </table>
+                
+        <p style="text-align:center">
+            <a href="{{ path('festival_groupe_listgroup') }}" class="btn btn-festival">
+                <i class="glyphicon glyphicon-chevron-left"></i>
+                Retour à la liste de groupe
+            </a>
+            <a href="{{ path('festival_groupe_modifiergroup', {'id': groupe.id}) }}" class="btn btn-festival">
+                <i class="glyphicon glyphicon-chevron-left"></i>
+                Modifier le Groupe
+            </a>
+            <a href="{{ path('festival_groupe_effacergroup', {'id': groupe.id}) }}" class="btn btn-danger" onclick="return(confirm('Etes-vous sûr de vouloir supprimer ce groupe ?'));">
+                <i class="glyphicon glyphicon-trash"></i>
+                Supprimer le Groupe
+            </a>
+  	</p>
+                
+        
+    </div>
+                
+    {% endfor %}
+
+{% endblock %}

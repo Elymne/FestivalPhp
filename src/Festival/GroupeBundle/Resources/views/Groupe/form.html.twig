@@ -1,0 +1,66 @@
+<h3>Formulaire d'annonce</h3>
+
+<div class="well">
+    
+        {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+
+        {# Les erreurs générales du formulaire. #}
+        {{ form_errors(form) }}
+        
+        <div class="form-group">
+            {{ form_label(form.nom,"Nom", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+            {{ form_errors(form.nom) }}
+            <div class="col-sm-10">
+                {{ form_widget(form.nom, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+ 
+    
+        <div class="form-group">
+            {{ form_label(form.responsable, "Responsable", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+            {{ form_errors(form.responsable) }}
+            <div class="col-sm-10">
+                {{ form_widget(form.responsable, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+
+    
+        <div class="form-group">
+            {{ form_label(form.adresse, "Adresse", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+            {{ form_errors(form.adresse) }}
+            <div class="col-sm-10">
+                {{ form_widget(form.adresse, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+            
+        <div class="form-group">
+            {{ form_label(form.nbPersonnes, "Nombre de personnes", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+            {{ form_errors(form.nbPersonnes) }}
+            <div class="col-sm-10">
+                {{ form_widget(form.nbPersonnes, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+            
+        <div class="form-group">
+            {{ form_label(form.pays, "Pays", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+            {{ form_errors(form.pays) }}
+            <div class="col-sm-10">
+                {{ form_widget(form.pays, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+            
+        <div class="form-group">
+            {{ form_label(form.hebergement, "Hebergement", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+            {{ form_errors(form.hebergement) }}
+            <div class="col-sm-10">
+                {{ form_widget(form.hebergement, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+        
+        <p style="text-align:center"> 
+            {{ form_widget(form.save, {'attr': {'class': 'btn btn-jefra'}}) }}
+        </p>
+        
+        {{ form_end(form) }}
+            
+</div>

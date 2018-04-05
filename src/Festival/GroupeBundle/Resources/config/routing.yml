@@ -1,0 +1,25 @@
+festival_groupe_listgroup:
+    path:     /
+    defaults: { _controller: FestivalGroupeBundle:Groupe:listGroup }
+    
+festival_groupe_ungroup:
+    path:     /groupe/{id}
+    defaults: { _controller: FestivalGroupeBundle:Groupe:unGroupe }
+    requirements:
+        id: \d+
+    
+festival_groupe_ajoutgroup:
+    path:     /ajout
+    defaults: { _controller: FestivalGroupeBundle:Groupe:ajouterGroupe }
+    
+festival_groupe_modifiergroup:
+    path:     /modifier/{id}
+    defaults: { _controller: FestivalGroupeBundle:Groupe:modifierGroupe }
+    requirements:
+        id: \d+
+        
+festival_groupe_effacergroup:
+    path:     /effacer/{id}
+    defaults: { _controller: FestivalGroupeBundle:Groupe:effacerGroupe }
+    requirements:
+        id: \d+

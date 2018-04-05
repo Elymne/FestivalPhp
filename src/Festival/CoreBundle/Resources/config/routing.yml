@@ -1,0 +1,3 @@
+festival_core_homepage:
+    path:     /
+    defaults: { _controller: FestivalCoreBundle:Core:index }

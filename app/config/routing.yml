@@ -1,0 +1,11 @@
+festival_groupe:
+    resource: "@FestivalGroupeBundle/Resources/config/routing.yml"
+    prefix:   /gestionGroupe
+
+festival_core:
+    resource: "@FestivalCoreBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation

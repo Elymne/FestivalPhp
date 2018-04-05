@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>{% block title %}Festival Folklores{% endblock %}</title>
+
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
+        <link rel="stylesheet" href="{{ asset('css/main.css') }}" />
+    {% endblock %}
+  
+    {% block favicon %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}?v=2" />
+    {% endblock %}
+
+</head>
+<body> 
+    
+    {#------ TITRE  ------#}
+    <div class="container-fluid">
+        <div id="header" class="jumbotron-blue">
+            <h1 style="text-align:center" ><font color="white">Festival Folklores du Monde</font></h1>
+        </div>
+        
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">       
+                </div>
+                <ul class="nav navbar-nav">
+                    <li{% if navbar is defined and navbar == 'home' %} class="active"{% endif %}>
+                        <a href="{{ path('festival_core_homepage') }}">Accueil</a>
+                    </li>
+                    <li{% if navbar is defined and navbar == 'group' %} class="active"{% endif %}>
+                        <a href="{{ path('festival_groupe_listgroup') }}">Gestion des Groupes</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+                
+    {#------ CONTENU SITE  ------#}   
+        <div class="row">
+        
+    {#------ CONTENU MENU EVENEMENT  ------#}
+            <div id="menu" class="col-md-3">
+                <div class='well-menu'>
+                    <h4>Dernière Représentations</h4>
+                    {# {{ render(controller("StagePlatformBundle:Advert:menu", {'limit': 5})) }} #}
+                </div>
+            </div>
+        
+    {#------ CONTENU BODY  ------#}       
+            <div id="content" class="col-md-6">
+                {% block body %}
+                {% endblock %}
+            </div>
+            
+    {#------ CONTENU MENU Dont je ne sais pas encore l'utilité  ------#}       
+            <div class="col-md-3">
+            </div>
+
+        </div>
+            
+    {#------ FOOTER  ------#} 
+        <footer>
+            <hr>
+            <p> Festival Folklores du Monde  {{ 'now'|date('Y') }} Vous souhaites la bienvenue.</p>
+        </footer>
+        {% block javascripts %}
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+            <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        {% endblock %}
+    </div>  
+</body>
+</html>

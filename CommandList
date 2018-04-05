@@ -1,0 +1,11 @@
+php : 
+    symfony.phar new <nom_projet> <version>
+    composer.phar dump-autoload
+
+    bin/console :
+        generate:bundle
+        generate:doctrine:entities
+        generate:doctrine:entity
+
+        doctrine:schema:update --force
+        generate:doctrine:form <nom_classe>

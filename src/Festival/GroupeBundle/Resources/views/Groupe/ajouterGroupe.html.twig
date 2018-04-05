@@ -1,0 +1,22 @@
+{% extends "@FestivalCore/Layout.html.twig" %}
+
+{% block body %}
+
+    {% block title %}
+        Ajouter un évènement
+    {% endblock %}
+
+    <div class="well">
+        <h2 style="text-align:center">Ajouter un Groupe</h2>
+
+        {{ include("@FestivalGroupe/Groupe/form.html.twig") }}
+
+        <p style="text-align:center">
+            <a href="{{ path('festival_groupe_listgroup') }}" class="btn btn-festival">
+                <i class="glyphicon glyphicon-chevron-left"></i>
+                Retour aux événements
+            </a>
+        </p>
+    </div>
+    
+{% endblock %}

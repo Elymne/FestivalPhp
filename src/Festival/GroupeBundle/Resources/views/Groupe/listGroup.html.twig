@@ -1,0 +1,41 @@
+{% extends "@FestivalCore/Layout.html.twig" %}
+
+{% block body %}
+        
+    <div class="well">
+        <h2 class="title"> Liste des Groupes </h2>
+        
+        
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>#</th>
+                        <th>Nom du groupe</th>
+                        <th>Responsable</th>
+                        <th>Hebergement</th>
+                    </tr>
+                </thead>
+                <tbody>
+        {% for unGroupe in listeGroupe %}
+                    <tr class="tr-white">
+                        <th scope="row">{{ unGroupe.id }}</th>
+                        <th><a href="{{ path('festival_groupe_ungroup', {'id': unGroupe.id}) }}">{{ unGroupe.nom }}</a></th>
+                        <td>{{ unGroupe.responsable }}</td>
+                        <td>{{ unGroupe.hebergement}}</td>
+                    </tr>
+        {% else %}
+      		        <li>Pas d'utilisateur</li>
+        {% endfor %}
+                </tbody>  
+            </table>
+        <p style="text-align:center">
+            <a href="{{ path('festival_groupe_ajoutgroup') }}" class="btn btn-festival">
+                <i class="glyphicon glyphicon-chevron-left"></i>
+                Ajouter un Groupe
+            </a>
+  	</p>
+                
+        
+    </div>
+
+{% endblock %}
