@@ -5,7 +5,3 @@ festival_groupe:
 festival_core:
     resource: "@FestivalCoreBundle/Resources/config/routing.yml"
     prefix:   /
-
-app:
-    resource: '@AppBundle/Controller/'
-    type: annotation
