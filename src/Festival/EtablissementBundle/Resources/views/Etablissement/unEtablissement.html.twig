@@ -1,0 +1,76 @@
+{% extends "@FestivalCore/Layout.html.twig" %}
+
+{% block body %}
+    
+    <div class="well">
+        <h2> Nom de l'établissement :  </h2>
+        <h3 class="title"> {{ unEtablissement.nom }} </h3>
+        
+        <table class="table">
+
+                <tr class="tr-white">
+                    <th>Adresse</th>
+                    <th>{{ unEtablissement.adresse }}</th>
+                </tr>
+                <tr class="tr-white">
+                    <th>Code Postal</th>
+                    <th>{{ unEtablissement.codePostal }}</th>
+                </tr>
+                <tr class="tr-white">
+                    <th>Ville</th>
+                    <th>{{ unEtablissement.ville }}</th>
+                </tr>
+                <tr class="tr-white">
+                    <th>Numéro de Téléphone</th>
+                    <th>{{ unEtablissement.telephone }}</th>
+                </tr>
+                <tr class="tr-white">
+                    <th>Hebergement</th>
+                    {% if unEtablissement.type %}
+                        <th class="glyphicon glyphicon-ok"></th>
+                    {% else %}
+                        <th class="glyphicon glyphicon-remove"></th>
+                    {% endif %}
+                </tr>
+        </table>
+                
+        <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Civilité</th>
+                        <th>Nom du Responsable</th>
+                        <th>Prénom du Responsable</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="tr-white">
+                        <th>{{ unEtablissement.civilite }}</th>
+                        <th>{{ unEtablissement.nomResp }}</th>
+                        <th>{{ unEtablissement.prenomResp }}</th>
+                        
+                        
+                    </tr>
+                </tbody>  
+            </table>        
+                
+                
+        <p style="text-align:center">
+            <a href="{{ path('festival_etablissement_listeetablissement') }}" class="btn btn-festival">
+                <i class="glyphicon glyphicon-chevron-left"></i>
+                Retour à la liste des établissements
+            </a>
+            <a href="{{ path('festival_etablissement_modifieretablissement', {'id': unEtablissement.id}) }}" class="btn btn-festival">
+                <i class="glyphicon glyphicon-chevron-left"></i>
+                Modifier l'établissement
+            </a>
+            <a href="{{ path('festival_etablissement_effaceretablissement', {'id': unEtablissement.id}) }}" class="btn btn-danger" onclick="return(confirm('Etes-vous sûr de vouloir supprimer cet établissement ?'));">
+                <i class="glyphicon glyphicon-trash"></i>
+                Supprimer l'établissement
+            </a>
+  	</p>
+                
+        
+    </div>
+                
+
+{% endblock %}{# empty Twig template #}

@@ -1,0 +1,41 @@
+{% extends "@FestivalCore/Layout.html.twig" %}
+
+{% block body %}
+    
+    <div class="well">
+        <h2> Nom de la chambre :  </h2>
+        <h3 class="title"> {{ uneChambre.nomChambre }} </h3>
+        
+        <table class="table">
+
+                <tr class="tr-white">
+                    <th>Adresse</th>
+                    <th>{{ uneChambre.nbPlaces }}</th>
+                </tr>
+                <tr class="tr-white">
+                    <th>Code Postal</th>
+                    <th>{{ uneChambre.idEtablissement.nom }}</th>
+                </tr>
+
+        </table>      
+        
+        <p style="text-align:center">
+            <a href="{{ path('festival_etablissement_listechambre') }}" class="btn btn-festival">
+                <i class="glyphicon glyphicon-chevron-left"></i>
+                Retour à la liste des chambres
+            </a>
+            <a href="{{ path('festival_etablissement_modifierchambre', {'id': uneChambre.id}) }}" class="btn btn-festival">
+                <i class="glyphicon glyphicon-chevron-left"></i>
+                Modifier la chambre
+            </a>
+            <a href="{{ path('festival_etablissement_effacerchambre', {'id': uneChambre.id}) }}" class="btn btn-danger" onclick="return(confirm('Etes-vous sûr de vouloir supprimer cette chambre ?'));">
+                <i class="glyphicon glyphicon-trash"></i>
+                Supprimer la chambre
+            </a>
+  	</p>
+                
+        
+    </div>
+                
+
+{% endblock %}{# empty Twig template #}

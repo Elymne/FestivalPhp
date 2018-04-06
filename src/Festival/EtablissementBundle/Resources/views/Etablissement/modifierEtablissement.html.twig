@@ -1,0 +1,20 @@
+{% extends "@FestivalCore/Layout.html.twig" %}
+
+{% block title %} Modifier un établissement {% endblock %}
+
+{% block body %}
+
+    <div class="well">
+        <h2 style="text-align:center">Modifier un établissement</h2>
+
+        {{ include("@FestivalEtablissement/Etablissement/form.html.twig") }}
+
+        <p style="text-align:center">
+            <a href="{{ path('festival_etablissement_listeetablissement') }}" class="btn btn-festival">
+                <i class="glyphicon glyphicon-chevron-left"></i>
+                Retour aux établissement
+            </a>
+        </p>
+    </div>
+    
+{% endblock %}

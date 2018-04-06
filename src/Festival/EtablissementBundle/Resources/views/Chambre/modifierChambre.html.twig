@@ -1,0 +1,20 @@
+{% extends "@FestivalCore/Layout.html.twig" %}
+
+{% block title %} Modifier une chambre {% endblock %}
+
+{% block body %}
+
+    <div class="well">
+        <h2 style="text-align:center">Modifier une chambre</h2>
+
+        {{ include("@FestivalEtablissement/Chambre/form.html.twig") }}
+
+        <p style="text-align:center">
+            <a href="{{ path('festival_etablissement_listechambre') }}" class="btn btn-festival">
+                <i class="glyphicon glyphicon-chevron-left"></i>
+                Retour aux chambres
+            </a>
+        </p>
+    </div>
+    
+{% endblock %}

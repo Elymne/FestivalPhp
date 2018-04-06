@@ -35,6 +35,12 @@
                     <li{% if navbar is defined and navbar == 'group' %} class="active"{% endif %}>
                         <a href="{{ path('festival_groupe_listgroup') }}">Gestion des Groupes</a>
                     </li>
+                    <li{% if navbar is defined and navbar == 'etab' %} class="active"{% endif %}>
+                        <a href="{{ path('festival_etablissement_listeetablissement') }}">Gestion des Etablissements</a>
+                    </li>
+                    <li{% if navbar is defined and navbar == 'chambre' %} class="active"{% endif %}>
+                        <a href="{{ path('festival_etablissement_listechambre') }}">Gestion des Chambres</a>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -65,7 +71,8 @@
     {#------ FOOTER  ------#} 
         <footer>
             <hr>
-            <p> Festival Folklores du Monde  {{ 'now'|date('Y') }} Vous souhaites la bienvenue.</p>
+            <p> Festival Folklores du Monde  {{ 'now'|date('Y') }} </p>
+            <p> vous souhaites la bienvenue. </p>
         </footer>
         {% block javascripts %}
             <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>

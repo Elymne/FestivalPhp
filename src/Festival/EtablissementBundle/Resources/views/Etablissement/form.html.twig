@@ -1,0 +1,95 @@
+<h3>Formulaire d'Etablissement</h3>
+
+<div class="well-form">
+    
+        {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+
+        {# Les erreurs générales du formulaire. #}
+        {{ form_errors(form) }}
+        
+        <div class="form-group">
+            {{ form_label(form.nom,"Nom", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+            {{ form_errors(form.nom) }}
+            <div class="col-sm-10">
+                {{ form_widget(form.nom, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+ 
+    
+        <div class="form-group">
+            {{ form_label(form.adresse, "Adresse", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+            {{ form_errors(form.adresse) }}
+            <div class="col-sm-10">
+                {{ form_widget(form.adresse, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+
+    
+        <div class="form-group">
+            {{ form_label(form.codePostal, "Code Postal", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+            {{ form_errors(form.codePostal) }}
+            <div class="col-sm-10">
+                {{ form_widget(form.codePostal, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+            
+        <div class="form-group">
+            {{ form_label(form.ville, "Ville", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+            {{ form_errors(form.ville) }}
+            <div class="col-sm-10">
+                {{ form_widget(form.ville, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+            
+        <div class="form-group">
+            {{ form_label(form.telephone, "Numéro de Telephone", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+            {{ form_errors(form.telephone) }}
+            <div class="col-sm-10">
+                {{ form_widget(form.telephone, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+            
+        <div class="form-group">
+            {{ form_label(form.email, "Adresse Email", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+            {{ form_errors(form.email) }}
+            <div class="col-sm-10">
+                {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+            
+        <div class="form-group">
+            {{ form_label(form.type, "Type d'établissement", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+            {{ form_errors(form.type) }}
+            <div class="col-sm-10">
+                {{ form_widget(form.type, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>    
+        <div class="form-group">
+            {{ form_label(form.civilite, "Civilité", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+            {{ form_errors(form.civilite) }}
+            <div class="col-sm-10">
+                {{ form_widget(form.civilite, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+        <div class="form-group">
+            {{ form_label(form.nomResp, "Nom du Responsable", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+            {{ form_errors(form.nomResp) }}
+            <div class="col-sm-10">
+                {{ form_widget(form.nomResp, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+        <div class="form-group">
+            {{ form_label(form.prenomResp, "Prénom du Responsable", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+            {{ form_errors(form.prenomResp) }}
+            <div class="col-sm-10">
+                {{ form_widget(form.prenomResp, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+        
+        <p style="text-align:center"> 
+            {{ form_widget(form.save, {'attr': {'class': 'btn btn-festival'}}) }}
+        </p>
+        
+        {{ form_end(form) }}
+            
+</div>

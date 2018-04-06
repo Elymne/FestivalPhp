@@ -1,0 +1,43 @@
+{% extends "@FestivalCore/Layout.html.twig" %}
+
+{% block body %}
+        
+    <div class="well">
+        <h2 class="title"> Liste des Chambres </h2>
+        
+        {% if listeChambres != NULL %}
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>#</th>
+                        <th>Numéro/Nom de Chambre</th>
+                        <th>Nombre de lit</th>
+                        <th>Nom de l'établissement</th>
+                    </tr>
+                </thead>
+            {% for uneChambre in listeChambres %}
+                <tbody>
+                    <tr class="tr-white">
+                        <th scope="row">{{ uneChambre.id }}</th>
+                        <th><a href="{{ path('festival_etablissement_chambre', {'id': uneChambre.id}) }}">{{ uneChambre.nomChambre }}</a></th>
+                        <td>{{ uneChambre.nbPlaces }}</td>
+                        <td>{{ uneChambre.idEtablissement.nom }}</td>
+                    </tr>
+            {% endfor %}
+                </tbody>  
+            </table>
+        {% else %}
+            <li>Pas de Chambre</li>
+        {% endif %}
+            
+        <p style="text-align:center">
+            <a href="{{ path('festival_etablissement_ajoutchambre') }}" class="btn btn-festival">
+                <i class="glyphicon glyphicon-chevron-left"></i>
+                Ajouter une Chambre
+            </a>
+  	</p>
+                
+        
+    </div>
+
+{% endblock %}

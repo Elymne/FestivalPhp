@@ -18,6 +18,7 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Festival\CoreBundle\FestivalCoreBundle(),
             new Festival\GroupeBundle\FestivalGroupeBundle(),
+            new Festival\EtablissementBundle\FestivalEtablissementBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

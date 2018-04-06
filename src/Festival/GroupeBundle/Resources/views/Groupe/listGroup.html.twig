@@ -21,7 +21,11 @@
                         <th scope="row">{{ unGroupe.id }}</th>
                         <th><a href="{{ path('festival_groupe_ungroup', {'id': unGroupe.id}) }}">{{ unGroupe.nom }}</a></th>
                         <td>{{ unGroupe.responsable }}</td>
-                        <td>{{ unGroupe.hebergement}}</td>
+                        {% if unGroupe.hebergement %}
+                            <td class="glyphicon glyphicon-ok"></td>
+                        {% else %}
+                            <td class="glyphicon glyphicon-remove"></td>
+                        {% endif %}
                     </tr>
         {% else %}
       		        <li>Pas d'utilisateur</li>
