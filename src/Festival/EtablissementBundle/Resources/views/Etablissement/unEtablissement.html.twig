@@ -63,11 +63,19 @@
                 <i class="glyphicon glyphicon-chevron-left"></i>
                 Modifier l'établissement
             </a>
+        {% if verifChambreExistante == 1 %}
+            <a class="btn btn-no" disabled="true">
+                <i class="glyphicon glyphicon-trash"></i>
+                Supprimer l'établissement
+            </a>
+        {% else %}
             <a href="{{ path('festival_etablissement_effaceretablissement', {'id': unEtablissement.id}) }}" class="btn btn-danger" onclick="return(confirm('Etes-vous sûr de vouloir supprimer cet établissement ?'));">
                 <i class="glyphicon glyphicon-trash"></i>
                 Supprimer l'établissement
             </a>
+        {% endif %}
   	</p>
+        
                 
         
     </div>

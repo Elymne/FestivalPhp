@@ -69,13 +69,20 @@
 }
 
 
-/* Bouton spécial orange */
-
+/* Bouton spécial bleu */
 
 .btn-festival {
     color: #FBFBEF;
     background-color: #6699ff;
     border-color: #3377ff;
+}
+
+/* Bouton spécial bleu */
+
+.btn-no {
+    color: #FBFBEF;
+    background-color: #737373;
+    border-color: #595959;
 }
 
 /* CSS CALENDRIER */
@@ -137,6 +144,8 @@
           box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
 }
 
+
+/* CSS LA POLICE MON GARS */
 h2.title{  
     margin-bottom: 50px;
     color: #2E2E2E;

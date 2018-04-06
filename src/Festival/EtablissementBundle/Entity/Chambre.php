@@ -107,7 +107,7 @@ class Chambre
      *
      * @return Chambre
      */
-    public function setidEtablissement(\Festival\EtablissementBundle\Entity\Etablissement $idEtablissement)
+    public function setIdEtablissement(\Festival\EtablissementBundle\Entity\Etablissement $idEtablissement)
     {
         $this->idEtablissement = $idEtablissement;
 
@@ -119,7 +119,7 @@ class Chambre
      *
      * @return \Festival\EtablissementBundle\Entity\Etablissement
      */
-    public function getidEtablissement()
+    public function getIdEtablissement()
     {
         return $this->idEtablissement;
     }

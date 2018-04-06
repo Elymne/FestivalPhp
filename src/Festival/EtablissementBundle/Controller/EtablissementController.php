@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 use Festival\EtablissementBundle\Entity\Etablissement;
+use Festival\EtablissementBundle\Entity\Chambre;
 use Festival\EtablissementBundle\Form\EtablissementType;
 
 class EtablissementController extends Controller
@@ -33,6 +34,7 @@ class EtablissementController extends Controller
     public function unEtablissementAction($id)
     {
         $navbar = "etab";
+        $verifChambreExistante = 0;
         
         $repository = $this
         	->getDoctrine()
@@ -42,9 +44,24 @@ class EtablissementController extends Controller
         
         $unEtablissement = $repository->find($id);
         
+        $repository = $this
+        	->getDoctrine()
+        	->getManager()
+        	->getRepository('FestivalEtablissementBundle:Chambre')
+        ;
+
+        $listeChambre = $repository->getAllChambre();
+        
+        foreach($listeChambre as $chambre){
+            if($unEtablissement->getId() == $chambre->getIdEtablissement()->getId()){
+                $verifChambreExistante = 1;
+            }  
+        }
+        
         return $this->render('@FestivalEtablissement/Etablissement/unEtablissement.html.twig', array(
         	"navbar" => $navbar,
                 "unEtablissement" => $unEtablissement,
+                "verifChambreExistante" => $verifChambreExistante,
         )); 
     }
     
