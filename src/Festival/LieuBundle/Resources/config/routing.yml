@@ -1,0 +1,25 @@
+festival_lieu_listelieu:
+    path:     /
+    defaults: { _controller: FestivalLieuBundle:Lieu:listeLieu }
+    
+festival_lieu_unlieu:
+    path:     /lieu/{id}
+    defaults: { _controller: FestivalLieuBundle:Lieu:unLieu }
+    requirements:
+        id: \d+
+    
+festival_lieu_ajoutlieu:
+    path:     /ajout
+    defaults: { _controller: FestivalLieuBundle:Lieu:ajouterLieu }
+    
+festival_lieu_modifierlieu:
+    path:     /modifier/{id}
+    defaults: { _controller: FestivalLieuBundle:Lieu:modifierLieu }
+    requirements:
+        id: \d+
+        
+festival_lieu_effacerlieu:
+    path:     /effacer/{id}
+    defaults: { _controller: FestivalLieuBundle:Lieu:effacerLieu }
+    requirements:
+        id: \d+

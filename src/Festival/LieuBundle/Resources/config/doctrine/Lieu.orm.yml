@@ -1,0 +1,20 @@
+Festival\LieuBundle\Entity\Lieu:
+    type: entity
+    table: null
+    repositoryClass: Festival\LieuBundle\Repository\LieuRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nom:
+            type: string
+            length: '50'
+        adresse:
+            type: string
+            length: '50'
+        capacite:
+            type: integer
+    lifecycleCallbacks: {  }

@@ -1,3 +1,7 @@
+festival_lieu:
+    resource: "@FestivalLieuBundle/Resources/config/routing.yml"
+    prefix:   /
+
 festival_etablissement:
     resource: "@FestivalEtablissementBundle/Resources/config/routing.yml"
     prefix:   /gestionEtablissement
@@ -8,4 +12,4 @@ festival_groupe:
 
 festival_core:
     resource: "@FestivalCoreBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /gestionLieu

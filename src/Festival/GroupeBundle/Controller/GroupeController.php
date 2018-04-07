@@ -63,7 +63,7 @@ class GroupeController extends Controller
                 $em->persist($groupe);
                 $em->flush();
 
-                $request->getSession()->getFlashBag()->add('notice', 'Evénement ajouté.');
+                $request->getSession()->getFlashBag()->add('notice', 'Lieu ajouté.');
 
                 return $this->redirectToRoute('festival_groupe_ungroup', array('id' => $groupe->getId()));
             }

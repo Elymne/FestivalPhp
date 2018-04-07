@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             new Festival\CoreBundle\FestivalCoreBundle(),
             new Festival\GroupeBundle\FestivalGroupeBundle(),
             new Festival\EtablissementBundle\FestivalEtablissementBundle(),
+            new Festival\LieuBundle\FestivalLieuBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

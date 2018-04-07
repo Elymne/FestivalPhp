@@ -1,0 +1,43 @@
+{% extends "@FestivalCore/Layout.html.twig" %}
+
+{% block body %}
+        
+    <div class="well">
+        <h2 class="title"> Liste des Lieux </h2>
+        
+        {% if listeLieu %}
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>#</th>
+                        <th>Nom du lieu</th>
+                        <th>Adresse</th>
+                        <th>Capacité du lieu</th>
+                    </tr>
+                </thead>
+                <tbody>
+            {% for unLieu in listeLieu %}
+                    <tr class="tr-white">
+                        <th scope="row">{{ unLieu.id }}</th>
+                        <th><a href="{{ path('festival_lieu_unlieu', {'id': unLieu.id}) }}">{{ unLieu.nom }}</a></th>
+                        <td>{{ unLieu.adresse }}</td>
+                        <td>{{ unLieu.capacite }}</td>
+                    </tr>
+            {% endfor %}
+                </tbody>  
+            </table>
+        {% else %}
+            <li>Pas de lieux Répertoriés</li>
+        {% endif %}
+        
+        <p style="text-align:center">
+            <a href="{{ path('festival_lieu_ajoutlieu') }}" class="btn btn-festival">
+                <i class="glyphicon glyphicon-chevron-left"></i>
+                Ajouter un Lieu
+            </a>
+  	</p>
+                
+        
+    </div>
+
+{% endblock %}{# empty Twig template #}

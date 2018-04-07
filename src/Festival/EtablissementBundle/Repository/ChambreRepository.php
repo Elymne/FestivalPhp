@@ -15,6 +15,7 @@ class ChambreRepository extends \Doctrine\ORM\EntityRepository
     {
 	return $this
             ->createQueryBuilder('c')
+            ->orderBy('c.idEtablissement', 'DESC')
             ->getQuery()
             ->getResult()
 	;
