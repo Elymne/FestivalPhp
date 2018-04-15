@@ -1,4 +1,4 @@
-festival_etablissement_listeetablissement:
+festival_etablissement_listeetablissements:
     path:     /etablissement
     defaults: { _controller: FestivalEtablissementBundle:Etablissement:listeEtablissements }
     
@@ -26,28 +26,28 @@ festival_etablissement_effaceretablissement:
 
 
     
-festival_etablissement_listechambre:
-    path:     /Chambre
+festival_etablissement_listechambres:
+    path:     /chambre
     defaults: { _controller: FestivalEtablissementBundle:Chambre:listeChambres }
 
 festival_etablissement_chambre:
-    path:     /Chambre/{id}
+    path:     /chambre/{id}
     defaults: { _controller: FestivalEtablissementBundle:Chambre:uneChambre }
     requirements:
         id: \d+
         
 festival_etablissement_ajoutchambre:
-    path:     /Chambre/ajout
+    path:     /chambre/ajout
     defaults: { _controller: FestivalEtablissementBundle:Chambre:ajouterChambre }
     
 festival_etablissement_modifierchambre:
-    path:     /Chambre/modifier/{id}
+    path:     /chambre/modifier/{id}
     defaults: { _controller: FestivalEtablissementBundle:Chambre:modifierChambre }
     requirements:
         id: \d+
         
 festival_etablissement_effacerchambre:
-    path:     /Chambre/effacer/{id}
+    path:     /chambre/effacer/{id}
     defaults: { _controller: FestivalEtablissementBundle:Chambre:effacerChambre }
     requirements:
         id: \d+

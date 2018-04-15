@@ -9,7 +9,6 @@
             <table class="table">
                 <thead class="thead-dark">
                     <tr>
-                        <th>#</th>
                         <th>Numéro/Nom de Chambre</th>
                         <th>Nombre de lit</th>
                         <th>Nom de l'établissement</th>
@@ -18,7 +17,6 @@
             {% for uneChambre in listeChambres %}
                 <tbody>
                     <tr class="tr-white">
-                        <th scope="row">{{ uneChambre.id }}</th>
                         <th><a href="{{ path('festival_etablissement_chambre', {'id': uneChambre.id}) }}">{{ uneChambre.nomChambre }}</a></th>
                         <td>{{ uneChambre.nbPlaces }}</td>
                         <td>{{ uneChambre.idEtablissement.nom }}</td>

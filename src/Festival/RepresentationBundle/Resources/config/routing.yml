@@ -1,0 +1,3 @@
+festival_representation_homepage:
+    path:     /
+    defaults: { _controller: FestivalRepresentationBundle:Default:index }

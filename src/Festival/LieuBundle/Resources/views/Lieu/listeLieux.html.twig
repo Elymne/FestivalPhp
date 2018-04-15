@@ -9,7 +9,6 @@
             <table class="table">
                 <thead class="thead-dark">
                     <tr>
-                        <th>#</th>
                         <th>Nom du lieu</th>
                         <th>Adresse</th>
                         <th>Capacité du lieu</th>
@@ -18,7 +17,6 @@
                 <tbody>
             {% for unLieu in listeLieu %}
                     <tr class="tr-white">
-                        <th scope="row">{{ unLieu.id }}</th>
                         <th><a href="{{ path('festival_lieu_unlieu', {'id': unLieu.id}) }}">{{ unLieu.nom }}</a></th>
                         <td>{{ unLieu.adresse }}</td>
                         <td>{{ unLieu.capacite }}</td>

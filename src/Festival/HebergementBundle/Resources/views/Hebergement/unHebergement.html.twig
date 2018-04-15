@@ -1,0 +1,53 @@
+{% extends "@FestivalCore/Layout.html.twig" %}
+
+{% block body %}
+    
+    <div class="well">
+        <h2> Offre d'hebergement du groupe :  </h2>
+        <h3 class="title"> {{ unHebergement.groupe.nom }} </h3>
+        
+        <table class="table">
+
+                <tr class="tr-white">
+                    <th>Nom de l'établissement</th>
+                    <th>{{ unHebergement.chambre.idEtablissement.nom }}</th>
+                </tr>
+                <tr class="tr-white">
+                    <th>Numéro/Nom de la chambre</th>
+                    <th>{{ unHebergement.chambre.nomChambre }}</th>
+                </tr>
+                <tr>
+                    <th>Nombre de lits</th>
+                    <th>{{ unHebergement.chambre.nbPlaces }}</th>
+                </tr>
+                <tr class="tr-white">
+                    <th>Nombre de personnes</th>
+                    <th>{{ unHebergement.groupe.nbPersonnes }}</th>
+                </tr>
+        </table>
+                
+        <table class="table">
+                <thead class="thead-dark">
+                    
+                </thead>
+                <tbody>
+                    
+                </tbody>  
+            </table>
+        
+        <p style="text-align:center">
+            <a href="{{ path('festival_hebergement_listehebergements') }}" class="btn btn-festival">
+                <i class="glyphicon glyphicon-chevron-left"></i>
+                Retour à la liste des hebergements
+            </a>
+            <a href="{{ path('festival_hebergement_effacerhebergement', {'id': unHebergement.id}) }}" class="btn btn-danger" onclick="return(confirm('Etes-vous sûr de vouloir supprimer cette offre ?'));">
+                <i class="glyphicon glyphicon-trash"></i>
+                Supprimer l'offre d'hebergement
+            </a>
+  	</p>
+                
+        
+    </div>
+                
+
+{% endblock %}{# empty Twig template #}{# empty Twig template #}

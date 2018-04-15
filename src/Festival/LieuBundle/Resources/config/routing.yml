@@ -1,6 +1,6 @@
-festival_lieu_listelieu:
+festival_lieu_listelieux:
     path:     /
-    defaults: { _controller: FestivalLieuBundle:Lieu:listeLieu }
+    defaults: { _controller: FestivalLieuBundle:Lieu:listeLieux }
     
 festival_lieu_unlieu:
     path:     /lieu/{id}

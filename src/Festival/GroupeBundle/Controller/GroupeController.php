@@ -40,11 +40,26 @@ class GroupeController extends Controller
         	->getRepository('FestivalGroupeBundle:Groupe')
         ;
         
-        $unGroupe = $repository->getOneById($id);
+        $unGroupe = $repository->find($id);
+        
+        $repository = $this
+        	->getDoctrine()
+        	->getManager()
+        	->getRepository('FestivalHebergementBundle:Hebergement')
+        ;
+
+        $listeHebergements = $repository->findAll();
+        
+        foreach($listeHebergements as $hebergement){
+            if($unGroupe->getId() == $hebergement->getGroupe()->getId()){
+                $verifGroupeExistant = 1;
+            }  
+        }
         
         return $this->render('@FestivalGroupe/Groupe/unGroupe.html.twig', array(
         	"navbar" => $navbar,
                 "unGroupe" => $unGroupe,
+                "verifGroupeExistant" => $verifGroupeExistant,
         )); 
     }
     

@@ -25,7 +25,7 @@ class EtablissementController extends Controller
 
         $listeEtablissement = $repository->getAllEtablissement();
 
-        return $this->render('@FestivalEtablissement/Etablissement/listeEtablissement.html.twig', array(
+        return $this->render('@FestivalEtablissement/Etablissement/listeEtablissements.html.twig', array(
         	"navbar" => $navbar,
                 "listeEtablissement" => $listeEtablissement,
         ));
@@ -106,7 +106,7 @@ class EtablissementController extends Controller
         $form = $this->createForm(EtablissementType::class, $unEtablissement);
 
         if (null === $unEtablissement) {
-            throw new NotFoundHttpException("L'établisseent d'id ".$id." n'existe pas.");
+            throw new NotFoundHttpException("L'établissement d'id ".$id." n'existe pas.");
         }
 
         if($request->isMethod('POST')){
@@ -154,7 +154,7 @@ class EtablissementController extends Controller
         throw new NotFoundHttpException("L'établissement d'id".$id." n'existe pas.");
     }
     
-    return $this->redirectToRoute('festival_etablissement_listeetablissement', array(
+    return $this->redirectToRoute('festival_etablissement_listeetablissements', array(
       'navbar' => $navbar
     ));
   }

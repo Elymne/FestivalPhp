@@ -3,6 +3,7 @@
 namespace Festival\EtablissementBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Chambre
@@ -32,6 +33,12 @@ class Chambre
      * @var int
      *
      * @ORM\Column(name="nbPlaces", type="integer")
+     * @Assert\Range(
+     *      min = 2,
+     *      max = 20,
+     *      minMessage = "Il doit y avoir au moins  {{ limit }} lit dans une chambre",
+     *      maxMessage = "Une chambre avec {{ limit }}, ça n'existe pas",
+     *)
      */
     private $nbPlaces;
 
@@ -103,7 +110,7 @@ class Chambre
     /**
      * Set idEtablissement
      *
-     * @param \Festival\EtablissementBundle\Entity\Etablissement $Etablissement
+     * @param \Festival\EtablissementBundle\Entity\Etablissement $idEtablissement
      *
      * @return Chambre
      */

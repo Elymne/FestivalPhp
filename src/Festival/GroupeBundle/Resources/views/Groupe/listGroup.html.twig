@@ -9,7 +9,6 @@
             <table class="table">
                 <thead class="thead-dark">
                     <tr>
-                        <th>#</th>
                         <th>Nom du groupe</th>
                         <th>Responsable</th>
                         <th>Hebergement</th>
@@ -18,7 +17,6 @@
                 <tbody>
             {% for unGroupe in listeGroupe %}
                     <tr class="tr-white">
-                        <th scope="row">{{ unGroupe.id }}</th>
                         <th><a href="{{ path('festival_groupe_ungroup', {'id': unGroupe.id}) }}">{{ unGroupe.nom }}</a></th>
                         <td>{{ unGroupe.responsable }}</td>
                         {% if unGroupe.hebergement %}

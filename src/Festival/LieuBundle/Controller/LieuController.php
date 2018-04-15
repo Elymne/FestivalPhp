@@ -12,7 +12,7 @@ use Festival\LieuBundle\Form\LieuType;
 class LieuController extends Controller
 {
     
-    public function listeLieuAction()
+    public function listeLieuxAction()
     {
         $navbar = "lieu";
         
@@ -24,7 +24,7 @@ class LieuController extends Controller
 
         $listeLieu = $repository->findAll();
 
-        return $this->render('@FestivalLieu/Lieu/listeLieu.html.twig', array(
+        return $this->render('@FestivalLieu/Lieu/listeLieux.html.twig', array(
         	"navbar" => $navbar,
                 "listeLieu" => $listeLieu,
         ));
@@ -138,7 +138,7 @@ class LieuController extends Controller
         throw new NotFoundHttpException("Le lieu d'id".$id." n'existe pas.");
     }
     
-    return $this->redirectToRoute('festival_lieu_listelieu', array(
+    return $this->redirectToRoute('festival_lieu_listelieux', array(
       'navbar' => $navbar
     ));
   }

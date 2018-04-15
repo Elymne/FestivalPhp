@@ -9,7 +9,6 @@
             <table class="table">
                 <thead class="thead-dark">
                     <tr>
-                        <th>#</th>
                         <th>Nom Etablissement</th>
                         <th>Adresse</th>
                         <th>Ville</th>
@@ -18,7 +17,6 @@
             {% for unEtablissement in listeEtablissement %}
                 <tbody>
                     <tr class="tr-white">
-                        <th scope="row">{{ unEtablissement.id }}</th>
                         <th><a href="{{ path('festival_etablissement_etablissement', {'id': unEtablissement.id}) }}">{{ unEtablissement.nom }}</a></th>
                         <td>{{ unEtablissement.adresse }}</td>
                         <td>{{ unEtablissement.ville }}</td>

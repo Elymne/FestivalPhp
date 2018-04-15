@@ -1,0 +1,19 @@
+estival_hebergement_listehebergements:
+    path:     /hebergement
+    defaults: { _controller: FestivalHebergementBundle:Hebergement:listeHebergements }
+
+festival_hebergement_hebergement:
+    path:     /hebergement/{id}
+    defaults: { _controller: FestivalHebergementBundle:Hebergement:unHebergement }
+    requirements:
+        id: \d+
+        
+festival_hebergement_ajouthebergement:
+    path:     /hebergement/ajout
+    defaults: { _controller: FestivalHebergementBundle:Hebergement:ajouterHebergement }
+        
+festival_hebergement_effacerhebergement:
+    path:     /hebergement/effacer/{id}
+    defaults: { _controller: FestivalHebergementBundle:Hebergement:effacerHebergement }
+    requirements:
+        id: \d+

@@ -3,12 +3,16 @@
 namespace Festival\GroupeBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * Groupe
  *
  * @ORM\Table(name="groupe")
  * @ORM\Entity(repositoryClass="Festival\GroupeBundle\Repository\GroupeRepository")
+ * @UniqueEntity(fields="nom", message="Un groupe du même nom existe déjà")
  */
 class Groupe
 {
@@ -23,8 +27,9 @@ class Groupe
 
     /**
      * @var string
-     *
+     * 
      * @ORM\Column(name="nom", type="string", length=40)
+     * @Assert\Length(min=2, minMessage="Le nom du groupe doit faire au moins {{ limit }} caractères.")
      */
     private $nom;
 
@@ -32,6 +37,7 @@ class Groupe
      * @var string
      *
      * @ORM\Column(name="responsable", type="string", length=40)
+     * @Assert\Length(min=2, minMessage="Le nom du responsable doit faire au moins {{ limit }} caractères.")
      */
     private $responsable;
 
@@ -39,6 +45,7 @@ class Groupe
      * @var string
      *
      * @ORM\Column(name="adresse", type="string", length=40)
+     * @Assert\Length(min=5, minMessage="Le nom de l'adresse doit faire au moins {{ limit }} caractères.")
      */
     private $adresse;
 
@@ -46,6 +53,12 @@ class Groupe
      * @var int
      *
      * @ORM\Column(name="nbPersonnes", type="smallint")
+     * @Assert\Range(
+     *      min = 1,
+     *      max = 12,
+     *      minMessage = "Il doit y avoir au moins  {{ limit }} membre dans le groupe",
+     *      maxMessage = "Nous n'acceptons pas d'orchestre (La limite est de {{ limit }} membres",
+     *)
      */
     private $nbPersonnes;
 
@@ -53,6 +66,7 @@ class Groupe
      * @var string
      *
      * @ORM\Column(name="pays", type="string", length=100)
+     * @Assert\Length(min=5, minMessage="Le nom du pays {{ limit }} caractères.")
      */
     private $pays;
 

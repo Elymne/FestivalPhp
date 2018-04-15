@@ -3,12 +3,15 @@
 namespace Festival\EtablissementBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * Etablissement
  *
  * @ORM\Table(name="etablissement")
  * @ORM\Entity(repositoryClass="Festival\EtablissementBundle\Repository\EtablissementRepository")
+ * @UniqueEntity(fields="nom", message="Un Etablissement du même nom existe déjà")
  */
 class Etablissement
 {

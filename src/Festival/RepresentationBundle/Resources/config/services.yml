@@ -1,0 +1,4 @@
+services:
+#    festival_representation.example:
+#        class: Festival\RepresentationBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

@@ -1,0 +1,46 @@
+{% extends "@FestivalCore/Layout.html.twig" %}
+
+{% block body %}
+        
+    <div class="well">
+        <h2 class="title"> Liste d'hebergements </h2>
+        
+        {% if listeHebergements != NULL %}
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        
+                        <th></th>
+                        <th>Date de l'offre</th>
+                        <th>Nom du groupe</th>
+                        <th>Etablissement d'hebergement<th>
+                        <th>Numéro/nom de la chambre</th>
+                    </tr>
+                </thead>
+            {% for unHebergement in listeHebergements %}
+                <tbody>
+                    <tr class="tr-white">
+                        <th><a href="{{ path('festival_hebergement_hebergement', {'id': unHebergement.id}) }}">détail</a></th>
+                        <td>{{ unHebergement.date|date('d/m/Y')}}</td>
+                        <td>{{ unHebergement.groupe.nom }}</td>
+                        <td>{{ unHebergement.chambre.idEtablissement.nom }}</td>
+                        <td>{{ unHebergement.chambre.nomChambre }}</td>
+                    </tr>
+            {% endfor %}
+                </tbody>  
+            </table>
+        {% else %}
+            <li>Pas d'hebergements</li>
+        {% endif %}
+            
+        <p style="text-align:center">
+            <a href="{{ path('festival_hebergement_ajouthebergement') }}" class="btn btn-festival">
+                <i class="glyphicon glyphicon-chevron-left"></i>
+                Ajouter un hebergement
+            </a>
+  	</p>
+                
+        
+    </div>
+
+{% endblock %}{# empty Twig template #}

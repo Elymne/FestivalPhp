@@ -2,32 +2,30 @@
 
 {% block body %}
     
-    {% for groupe in unGroupe %}
-    
     <div class="well">
-        <h2 class="title"> Information du groupe : {{ groupe.nom }} </h2>
+        <h2 class="title"> Information du groupe : {{ unGroupe.nom }} </h2>
         
         <table class="table">
 
                 <tr class="tr-white">
                     <th>Responsable</th>
-                    <th>{{ groupe.responsable }}</th>
+                    <th>{{ unGroupe.responsable }}</th>
                 </tr>
                 <tr class="tr-white">
                     <th>Adresse</th>
-                    <th>{{ groupe.adresse }}</th>
+                    <th>{{ unGroupe.adresse }}</th>
                 </tr>
                 <tr class="tr-white">
                     <th>Nombre de personne dans le groupe</th>
-                    <th>{{ groupe.nbPersonnes }}</th>
+                    <th>{{ unGroupe.nbPersonnes }}</th>
                 </tr>
                 <tr class="tr-white">
                     <th>Pays d'origine</th>
-                    <th>{{ groupe.pays }}</th>
+                    <th>{{ unGroupe.pays }}</th>
                 </tr>
                 <tr class="tr-white">
                     <th>Hebergement</th>
-                    {% if groupe.hebergement %}
+                    {% if unGroupe.hebergement %}
                         <th class="glyphicon glyphicon-ok"></th>
                     {% else %}
                         <th class="glyphicon glyphicon-remove"></th>
@@ -42,19 +40,24 @@
                 <i class="glyphicon glyphicon-chevron-left"></i>
                 Retour à la liste de groupe
             </a>
-            <a href="{{ path('festival_groupe_modifiergroup', {'id': groupe.id}) }}" class="btn btn-festival">
+            <a href="{{ path('festival_groupe_modifiergroup', {'id': unGroupe.id}) }}" class="btn btn-festival">
                 <i class="glyphicon glyphicon-chevron-left"></i>
                 Modifier le Groupe
             </a>
-            <a href="{{ path('festival_groupe_effacergroup', {'id': groupe.id}) }}" class="btn btn-danger" onclick="return(confirm('Etes-vous sûr de vouloir supprimer ce groupe ?'));">
-                <i class="glyphicon glyphicon-trash"></i>
-                Supprimer le Groupe
-            </a>
-  	</p>
+            {% if verifGroupeExistant == 1 %}
+                <a class="btn btn-no" disabled="true">
+                    <i class="glyphicon glyphicon-trash"></i>
+                    Supprimer le groupe
+                </a>
+            {% else %}
+                <a href="{{ path('festival_groupe_effacergroup', {'id': unGroupe.id}) }}" class="btn btn-danger" onclick="return(confirm('Etes-vous sûr de vouloir supprimer cet établissement ?'));">
+                    <i class="glyphicon glyphicon-trash"></i>
+                    Supprimer le groupe
+                </a>
+            {% endif %}
+        </p>
                 
         
     </div>
-                
-    {% endfor %}
 
 {% endblock %}

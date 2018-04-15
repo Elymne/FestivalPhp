@@ -37,12 +37,15 @@
                     </li>  
                     <li class="dropdown {% if navbar is defined and navbar == 'chambre' or navbar is defined and navbar == 'etab' %}active{% endif %}"><a class="dropdown-toggle" data-toggle="dropdown"href="#">Gestion des Etablissements<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li{% if navbar is defined and navbar == 'etab' %} class="active"{% endif %}><a href="{{ path('festival_etablissement_listeetablissement') }}">Etablissements</a></li>
-                            <li{% if navbar is defined and navbar == 'chambre' %} class="active"{% endif %}><a href="{{ path('festival_etablissement_listechambre') }}">Chambres</a></li>
+                            <li{% if navbar is defined and navbar == 'etab' %} class="active"{% endif %}><a href="{{ path('festival_etablissement_listeetablissements') }}">Etablissements</a></li>
+                            <li{% if navbar is defined and navbar == 'chambre' %} class="active"{% endif %}><a href="{{ path('festival_etablissement_listechambres') }}">Chambres</a></li>
                         </ul>
                     </li>
                     <li{% if navbar is defined and navbar == 'lieu' %} class="active"{% endif %}>
-                        <a href="{{ path('festival_lieu_listelieu') }}">Gestion des Lieux</a>
+                        <a href="{{ path('festival_lieu_listelieux') }}">Gestion des Lieux</a>
+                    </li>
+                    <li{% if navbar is defined and navbar == 'hebergement' %} class="active"{% endif %}>
+                        <a href="{{ path('festival_hebergement_listehebergements') }}">Offre Herbegements</a>
                     </li>
                 </ul>
             </div>

@@ -2,8 +2,12 @@
 
 namespace Festival\LieuBundle\Entity;
 
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+
 /**
  * Lieu
+ * @UniqueEntity(fields="nom", message="Un groupe du même nom existe déjà")
  */
 class Lieu
 {
@@ -24,6 +28,12 @@ class Lieu
 
     /**
      * @var int
+     * @Assert\Range(
+     *      min = 30,
+     *      max = 4000,
+     *      minMessage = "Le lieu doit contenir au moins {{ limit }} places",
+     *      maxMessage = "Le lieu doit contenir moins de {{ limit }} places",
+     *)
      */
     private $capacite;
 

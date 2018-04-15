@@ -23,7 +23,7 @@ class ChambreController extends Controller
 
         $listeChambres = $repository->getAllChambre();
 
-        return $this->render('@FestivalEtablissement/Chambre/listeChambre.html.twig', array(
+        return $this->render('@FestivalEtablissement/Chambre/listeChambres.html.twig', array(
         	"navbar" => $navbar,
                 "listeChambres" => $listeChambres,
         ));
@@ -136,7 +136,7 @@ class ChambreController extends Controller
         throw new NotFoundHttpException("La chambre d'id".$id." n'existe pas.");
     }
     
-    return $this->redirectToRoute('festival_etablissement_listechambre', array(
+    return $this->redirectToRoute('festival_etablissement_listechambres', array(
       'navbar' => $navbar
     ));
   }
