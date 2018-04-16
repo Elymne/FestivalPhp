@@ -64,7 +64,7 @@
         
     {#------ CONTENU BODY  ------#}       
             <div id="content" class="col-md-8">
-                <div class="body">
+                <div class="well-body">
                     {% block body %}
                     {% endblock %}
                 </div>
@@ -78,10 +78,10 @@
             
     {#------ FOOTER  ------#} 
         <footer>
-            <div class="well-footer">
-                <hr>
-                <p> Festival Folklores du Monde  {{ 'now'|date('Y') }} </p>
-                <p> vous souhaites la bienvenue. </p>
+            <div class="col-md-12">
+                <div class="well-footer">
+                    <p> Festival Folklores du Monde  {{ 'now'|date('Y') }} vous souhaites la bienvenue.</p>
+                </div>
             </div>
         </footer>
         {% block javascripts %}
