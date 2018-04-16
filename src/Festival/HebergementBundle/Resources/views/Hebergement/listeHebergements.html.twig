@@ -2,7 +2,7 @@
 
 {% block body %}
         
-    <div class="well">
+    <div class="well-festival">
         <h2 class="title"> Liste d'hebergements </h2>
         
         {% if listeHebergements != NULL %}
@@ -10,17 +10,17 @@
                 <thead class="thead-dark">
                     <tr>
                         
-                        <th></th>
-                        <th>Date de l'offre</th>
-                        <th>Nom du groupe</th>
-                        <th>Etablissement d'hebergement<th>
-                        <th>Numéro/nom de la chambre</th>
+                        <th>#</th>
+                        <th>Date</th>
+                        <th>Groupe</th>
+                        <th>Etablissement<th>
+                        <th>Chambre</th>
                     </tr>
                 </thead>
             {% for unHebergement in listeHebergements %}
                 <tbody>
                     <tr class="tr-white">
-                        <th><a href="{{ path('festival_hebergement_hebergement', {'id': unHebergement.id}) }}">détail</a></th>
+                        <th><a href="{{ path('festival_hebergement_hebergement', {'id': unHebergement.id}) }}">{{ unHebergement.id }}</a></th>
                         <td>{{ unHebergement.date|date('d/m/Y')}}</td>
                         <td>{{ unHebergement.groupe.nom }}</td>
                         <td>{{ unHebergement.chambre.idEtablissement.nom }}</td>

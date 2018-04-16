@@ -16,6 +16,40 @@
   border-radius: 1px;
 }
 
+.jumbotron-footer {
+  padding-top: 0px; 
+  padding-bottom: 0px;
+  color : white;
+  margin-left: -20px;
+  margin-right: -20px;
+  margin-bottom: 0px;
+  background-color: #222;
+  background-size: cover;
+}
+.container .jumbotron-blue,
+.container-fluid .jumbotron-blue {
+  padding-right: 15px;
+  padding-left: 15px;
+  border-radius: 1px;
+}
+
+.body {    
+    min-height: 20px;
+    padding-bottom : 250px;
+    margin-bottom: -20px;
+    background-color: white;
+    border-radius: 0px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+}
+
+.well-festival {    
+    min-height: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+
 /* CSS BARRE DE MENU */
 
 .navbar-default {
@@ -63,7 +97,7 @@
     border-radius: 1px;
     margin-left: -20px;
     margin-right: -20px;
-    margin-bottom: 50px;
+    margin-bottom: 0px;
     margin-top: 0px;
     height: 51px;
 }
@@ -164,3 +198,26 @@ p.index{
     margin-bottom: 30px;
 }
 
+/* Background */
+
+body {
+color:black;
+background-color:white;
+background-image:url("../images/Core/image_background.jpg");
+background-attachment:fixed;
+background-position:right top;
+}
+
+.well-footer {    
+    min-height: 20px;
+    padding-bottom: 0px;
+    margin-bottom: -11px;
+    margin-left : -15px;
+    margin-right : -15px;
+    background-color: #080808;
+    border-color: #080808;
+    border-radius: 0px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+    color : white;
+}

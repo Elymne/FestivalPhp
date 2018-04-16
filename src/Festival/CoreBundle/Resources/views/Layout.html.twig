@@ -55,7 +55,7 @@
         <div class="row">
         
     {#------ CONTENU MENU EVENEMENT  ------#}
-            <div id="menu" class="col-md-3">
+            <div id="menu" class="col-md-2">
                 <div class='well-menu'>
                     <h4>Dernière Représentations</h4>
                     {# {{ render(controller("StagePlatformBundle:Advert:menu", {'limit': 5})) }} #}
@@ -63,22 +63,26 @@
             </div>
         
     {#------ CONTENU BODY  ------#}       
-            <div id="content" class="col-md-6">
-                {% block body %}
-                {% endblock %}
+            <div id="content" class="col-md-8">
+                <div class="body">
+                    {% block body %}
+                    {% endblock %}
+                </div>
             </div>
             
     {#------ CONTENU MENU Dont je ne sais pas encore l'utilité  ------#}       
-            <div class="col-md-3">
+            <div class="col-md-2">
             </div>
 
         </div>
             
     {#------ FOOTER  ------#} 
         <footer>
-            <hr>
-            <p> Festival Folklores du Monde  {{ 'now'|date('Y') }} </p>
-            <p> vous souhaites la bienvenue. </p>
+            <div class="well-footer">
+                <hr>
+                <p> Festival Folklores du Monde  {{ 'now'|date('Y') }} </p>
+                <p> vous souhaites la bienvenue. </p>
+            </div>
         </footer>
         {% block javascripts %}
             <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>

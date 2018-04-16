@@ -1,4 +1,4 @@
-estival_hebergement_listehebergements:
+festival_hebergement_listehebergements:
     path:     /hebergement
     defaults: { _controller: FestivalHebergementBundle:Hebergement:listeHebergements }
 
