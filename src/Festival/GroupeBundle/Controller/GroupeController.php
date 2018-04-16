@@ -31,7 +31,10 @@ class GroupeController extends Controller
     }
     
     public function unGroupeAction($id)
-    {
+    {   
+        
+        $verifGroupeExistant = 0;
+        
         $navbar = "group";
         
         $repository = $this

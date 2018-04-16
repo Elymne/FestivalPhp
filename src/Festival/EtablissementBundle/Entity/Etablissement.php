@@ -42,6 +42,8 @@ class Etablissement
      * @var string
      *
      * @ORM\Column(name="codePostal", type="string", length=10)
+     * @Assert\Length(min=5, minMessage="Le code postal doit faire plus de 4 {{ limit }} chiffre.")
+     * @Assert\Length(max=6, maxMessage="Le code postal doit faire moins de 7 {{ limit }} chiffre.")
      */
     private $codePostal;
 
